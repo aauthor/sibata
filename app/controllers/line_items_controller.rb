@@ -4,7 +4,8 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
-    @line_items = LineItem.all
+    @line_items = params[:tab_id].present? ? LineItem.where(tab_id: params[:tab_id]) : LineItem.all
+    @new_line_item_path = params[:tab_id].present? ? new_tab_line_item_path(params[:tab_id]) : new_line_item_path
   end
 
   # GET /line_items/1
@@ -15,10 +16,13 @@ class LineItemsController < ApplicationController
   # GET /line_items/new
   def new
     @line_item = LineItem.new
+    @tab = Tab.find( params[:tab_id] ) if params[:tab_id].present?
+    @tabs = Tab.all if params[:tab_id].blank?
   end
 
   # GET /line_items/1/edit
   def edit
+    @tab = @line_item.tab
   end
 
   # POST /line_items
@@ -56,7 +60,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+      format.html { redirect_to tab_line_items_url(@line_item.tab) }
       format.json { head :no_content }
     end
   end

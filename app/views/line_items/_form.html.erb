@@ -11,9 +11,19 @@
     </div>
   <% end %>
 
+  <% if (tab_id = params[:tab_id] || @line_item.tab_id ) %>
+    <h2>for: <%= @tab.name %></h2>
+    <%= f.hidden_field :tab_id, value: @tab.id %>
+  <% else %>
+    <div class="field">
+      <%= f.label :tab_id %><br>
+      <%= f.collection_select:tab_id, @tabs, :id, :name %>
+    </div>
+  <% end %>
   <div class="field">
-    <%= f.label :tab_id %><br>
-    <%= f.text_field :tab_id %>
+    <% LineItem.default_amounts.each do |amount| %>
+      <%= button_tag number_to_currency(amount), class: 'amount_fast_fill', type: 'button', data: {amount: amount} %><br>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>

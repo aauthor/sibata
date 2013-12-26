@@ -1,7 +1,11 @@
 SimpleBarTab::Application.routes.draw do
   resources :line_items
 
-  resources :tabs
+  resources :tabs do
+    resources :line_items
+  end
+
+  root 'tabs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

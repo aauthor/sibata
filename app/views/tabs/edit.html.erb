@@ -2,11 +2,6 @@
 
 <%= render 'form' %>
 
-<%= form_for LineItem.new do |f| %>
-  <%= f.hidden_field :tab_id, value: @tab.id %>
-  <%= f.hidden_field :amount, value: 1 %>
-  <%= f.submit '$1.00' %>
-<% end %>
-
+<%= link_to 'Add Line Item', new_tab_line_item_path(@tab) %>
 <%= link_to 'Show', @tab %> |
 <%= link_to 'Back', tabs_path %>

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20131223010533) do
 
   create_table "line_items", force: true do |t|
     t.integer  "tab_id"
-    t.float    "amount"
+    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
