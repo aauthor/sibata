@@ -1,13 +1,20 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: simplebartab_development
+  database: sibita_development
   pool: 5
-  username: simplebartab
+  username: sibata
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: simplebartab_test
+  database: sibata_test
   pool: 5
-  username: simplebartab
+  username: sibata
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: sibata_production
+  pool: 5
+  username: deploy
