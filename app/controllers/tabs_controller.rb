@@ -1,4 +1,5 @@
 class TabsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_tab, only: [:show, :edit, :update, :destroy]
 
   # GET /tabs
@@ -24,7 +25,7 @@ class TabsController < ApplicationController
   # POST /tabs
   # POST /tabs.json
   def create
-    @tab = Tab.new(tab_params)
+    @tab = Tab.new(tab_params.merge({user: current_user}))
 
     respond_to do |format|
       if @tab.save
@@ -69,6 +70,6 @@ class TabsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tab_params
-      params.require(:tab).permit(:name)
+      params.require(:tab).permit(:name, :user)
     end
 end

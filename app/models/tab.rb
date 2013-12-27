@@ -1,6 +1,7 @@
 class Tab < ActiveRecord::Base
 
   has_many :line_items, dependent: :destroy
+  belongs_to :user
 
   def add!(amount)
     line_items << LineItem.new( amount: amount )

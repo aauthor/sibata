@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -28,7 +29,7 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    @line_item = LineItem.new(line_item_params.merge({user: current_user}))
 
     respond_to do |format|
       if @line_item.save
@@ -73,6 +74,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:tab_id, :amount)
+      params.require(:line_item).permit(:tab_id, :amount, :user)
     end
 end

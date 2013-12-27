@@ -1,5 +1,6 @@
 class LineItem < ActiveRecord::Base
   belongs_to :tab
+  belongs_to :user
 
   validates :amount, presence: true
 
