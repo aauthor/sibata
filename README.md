@@ -1,4 +1,3 @@
-simple-bar-tab
-==============
+#sibata
 
-A very simple bar tab tracker in Rails
+SImple BAr TAb - a very simple bar tab tracker in Rails
