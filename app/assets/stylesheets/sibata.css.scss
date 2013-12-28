@@ -1,1 +1,58 @@
+// A simple style reset
+* {
+  border: 0;
+  font: {
+    size: 1em;
+    style: normal;
+    weight: normal;
+  }
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
 
+body {
+  background-color: #FFF;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 50px 25%;
+}
+
+// Typography
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  line-height: 2em;
+}
+
+h1 { color: #999; font-size: 2.5em }
+h2 { color: #666; font-size: 2em }
+h3 { color: #333; font-size: 1.75em }
+
+table {
+  border: {
+    collapse: 0;
+    spacing: 0;
+  }
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+th, td {
+  font-size: 0.9em;
+  padding: 0.5em 0;
+}
+
+th {
+  border-bottom: 0.1em solid #CCC;
+  font-weight: bold;
+  text-align: left;
+}
+
+td {
+  border-bottom: 0.1em solid #EEE;
+}
