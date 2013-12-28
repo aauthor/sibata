@@ -1,5 +1,5 @@
 class TabsController < ApplicationController
-  before_action :set_tab, only: [:show, :edit, :update, :destroy]
+  before_action :set_tab, only: [:show, :edit, :update, :destroy, :close]
 
   # GET /tabs
   # GET /tabs.json
@@ -48,6 +48,16 @@ class TabsController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @tab.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # GET /tabs/1/close
+  # GET /tabs/1/close.json
+  def close
+    @tab.close!
+    respond_to do |format|
+      format.html { redirect_to tab_url(@tab) }
+      format.json { head :no_content }
     end
   end
 

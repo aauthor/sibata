@@ -13,12 +13,13 @@
 
   <tbody>
     <% @tabs.each do |tab| %>
-      <tr>
+      <tr class="tab-<%= tab.open? ? 'open' : 'closed' %>">
         <td><%= tab.name %></td>
         <td><%= number_to_currency(tab.balance) %>
         <td><%= link_to 'New Line Item', new_tab_line_item_path(tab) %>
         <td><%= link_to 'Show', tab %></td>
         <td><%= link_to 'Edit', edit_tab_path(tab) %></td>
+        <td><%= link_to 'Close', close_tab_path(tab), data: { confirm: 'Are you sure that you want to close this tab?' }%></td>
       </tr>
     <% end %>
   </tbody>

@@ -3,6 +3,9 @@ SimpleBarTab::Application.routes.draw do
 
   resources :tabs do
     resources :line_items
+    member do
+      get :close
+    end
   end
 
   root 'tabs#index'

@@ -23,7 +23,7 @@ class Tab < ActiveRecord::Base
   end
 
   def close!
-    subtract! total if open?
+    subtract! balance if open?
   end
 
   def to_s

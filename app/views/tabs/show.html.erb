@@ -7,7 +7,8 @@
 
 <%= link_to 'New Line Item', new_tab_line_item_path(@tab) %> |
 <%= link_to 'Edit', edit_tab_path(@tab) %> |
-<%= link_to 'Back', tabs_path %>
+<%= link_to 'Back', tabs_path %> |
+<%= link_to 'Close', close_tab_path(@tab), data: { confirm: 'Are you sure that you want to close this tab?' }%>
 
 <table>
   <% @tab.line_items.each do |line_item| %>
