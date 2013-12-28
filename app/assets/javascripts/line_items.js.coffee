@@ -3,7 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-
   $('.amount_fast_fill').click (e)->
-    $('#line_item_amount').val $(this).data('amount')
+    fast_amount = $(this).data('amount')
+    $('#line_item_amount').val(fast_amount)
+    true
 
