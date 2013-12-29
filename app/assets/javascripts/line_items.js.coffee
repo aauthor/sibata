@@ -5,5 +5,5 @@
 $ ->
 
   $('.amount_fast_fill').click (e)->
-    $('#line_item_amount').val $(this).data('amount')
+    $('#line_item_amount').val $(e.target).data('amount')
 
