@@ -1,5 +1,5 @@
 class LineItem < ActiveRecord::Base
-  belongs_to :tab
+  belongs_to :tab, touch: true
 
   validates :amount, presence: true
 

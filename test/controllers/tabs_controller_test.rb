@@ -46,4 +46,9 @@ class TabsControllerTest < ActionController::TestCase
 
     assert_redirected_to tabs_path
   end
+
+  test "should get last_update" do
+    get :last_update
+    assert_response :success
+  end
 end

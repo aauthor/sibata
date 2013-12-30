@@ -1,5 +1,6 @@
 class Tab < ActiveRecord::Base
 
+  validates_uniqueness_of :first_name, scope: :last_name, message: 'this tab name is already taken'
   has_many :line_items, dependent: :destroy
 
   def add!(amount)
@@ -27,7 +28,15 @@ class Tab < ActiveRecord::Base
   end
 
   def to_s
-    name
+    "#{last_name}, #{first_name}"
+  end
+
+  def name
+    to_s
+  end
+
+  def self.last_update
+    maximum( :updated_at )
   end
 
 end

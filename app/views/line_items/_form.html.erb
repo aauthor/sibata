@@ -1,3 +1,7 @@
+<% content_for :head -%>
+<% content_for :head do -%>
+  <%= javascript_include_tag 'line_items_form' %>
+<% end -%>
 <%= form_for(@line_item) do |f| %>
   <% if @line_item.errors.any? %>
     <div id="error_explanation">

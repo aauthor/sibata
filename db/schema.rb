@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223010533) do
+ActiveRecord::Schema.define(version: 20131230182701) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "line_items", force: true do |t|
     t.integer  "tab_id"
@@ -20,12 +23,13 @@ ActiveRecord::Schema.define(version: 20131223010533) do
     t.datetime "updated_at"
   end
 
-  add_index "line_items", ["tab_id"], name: "index_line_items_on_tab_id"
+  add_index "line_items", ["tab_id"], name: "index_line_items_on_tab_id", using: :btree
 
   create_table "tabs", force: true do |t|
-    t.string   "name"
+    t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
   end
 
 end

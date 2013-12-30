@@ -4,7 +4,8 @@
 
 $(document).ready ->
   $('.amount_fast_fill').click (e)->
-    fast_amount = $(this).data('amount')
-    $('#line_item_amount').val(fast_amount)
+    fast_amount = parseFloat $(this).data('amount')
+    current_amount = parseFloat $('#line_item_amount').val() || 0
+    $('#line_item_amount').val(current_amount + fast_amount)
     true
 

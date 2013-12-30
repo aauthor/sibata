@@ -4,7 +4,7 @@ class TabsController < ApplicationController
   # GET /tabs
   # GET /tabs.json
   def index
-    @tabs = Tab.all
+    @tabs = Tab.all.order(:last_name, :first_name)
   end
 
   # GET /tabs/1
@@ -28,7 +28,7 @@ class TabsController < ApplicationController
 
     respond_to do |format|
       if @tab.save
-        format.html { redirect_to @tab, notice: 'Tab was successfully created.' }
+        format.html { redirect_to new_tab_line_item_path(@tab) , notice: 'Tab was successfully created.' }
         format.json { render action: 'show', status: :created, location: @tab }
       else
         format.html { render action: 'new' }
@@ -71,6 +71,13 @@ class TabsController < ApplicationController
     end
   end
 
+  # GET /tabs/last_update
+  # GET /tabs/last_update.json
+  def last_update
+    render json: Tab.last_update.to_i
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tab
@@ -79,6 +86,6 @@ class TabsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tab_params
-      params.require(:tab).permit(:name)
+      params.require(:tab).permit(:first_name, :last_name)
     end
 end

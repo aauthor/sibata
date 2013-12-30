@@ -3,6 +3,9 @@ SimpleBarTab::Application.routes.draw do
 
   resources :tabs do
     resources :line_items
+    collection do
+      get :last_update
+    end
     member do
       get :close
     end

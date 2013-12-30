@@ -24,4 +24,8 @@ class TabTest < ActiveSupport::TestCase
     t.close!
     assert t.balance == 0
   end
+  test '.last_update should get the last update' do
+    t = tabs :one
+    assert Tab.last_update == t.updated_at
+  end
 end
