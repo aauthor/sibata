@@ -1,3 +1,8 @@
+// Mixins
+@mixin helvetica-neue {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 // A simple style reset
 * {
   border: 0;
@@ -13,9 +18,9 @@
 }
 
 body {
+  @include helvetica-neue;
   background-color: #FFF;
   color: #000;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 50px 25%;
 }
 
@@ -55,4 +60,50 @@ th {
 
 td {
   border-bottom: 0.1em solid #EEE;
+}
+
+// Forms
+
+form {
+  display: block;
+}
+
+input {
+  @include helvetica-neue;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+
+button,
+input[type=submit] {
+  background-color: #000;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #666;
+  }
+}
+
+input[type=text] {
+  border: {
+    color: #999;
+    style: solid;
+    width: 0.1em;
+  }
+  padding: 0.25em 0.5em;
+}
+
+label {
+  color: #999;
+  display: block;
+  font: {
+    size: 0.8em;
+    weight: bold;
+  }
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
 }

@@ -16,17 +16,17 @@
     <%= f.hidden_field :tab_id, value: @tab.id %>
   <% else %>
     <div class="field">
-      <%= f.label :tab_id %><br>
+      <%= f.label :tab_id %>
       <%= f.collection_select:tab_id, @tabs, :id, :name %>
     </div>
   <% end %>
   <div class="field">
     <% LineItem.default_amounts.each do |amount| %>
-      <%= button_tag number_to_currency(amount), class: 'amount_fast_fill', type: 'button', data: {amount: amount} %><br>
+      <%= button_tag number_to_currency(amount), class: 'amount_fast_fill', type: 'button', data: {amount: amount} %>
     <% end %>
   </div>
   <div class="field">
-    <%= f.label :amount %><br>
+    <%= f.label :amount %>
     <%= f.text_field :amount %>
   </div>
   <div class="actions">
