@@ -17,7 +17,7 @@
   <tbody>
     <% @tabs.each do |tab| %>
       <tr class="tab-<%= tab.open? ? 'open' : 'closed' %>">
-        <td><%= tab.name %></td>
+        <td><%= link_to tab.name, tab %></td>
         <td><%= number_to_currency(tab.balance) %>
         <td><%= link_to 'New Line Item', new_tab_line_item_path(tab) %>
         <td><%= link_to 'Show', tab %></td>
