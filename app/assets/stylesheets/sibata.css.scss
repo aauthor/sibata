@@ -1,0 +1,141 @@
+// Colors
+$anchor_text_color: #693;
+$background_color: #FFF;
+$border_color: #CCC;
+$foreground_color: #333;
+
+// Typography
+$font_family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// A simple style reset
+* {
+  border: 0;
+  font: {
+    size: 1em;
+    style: normal;
+    weight: normal;
+  }
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: $background_color;
+  color: $foreground_color;
+  font-family: $font_family;
+  padding: 50px 25%;
+}
+
+// Anchors
+
+a {
+  border-bottom: 0.1em solid $anchor_text_color * 1.25;
+  color: $anchor_text_color;
+
+  &:hover {
+    border-bottom-color: $anchor_text_color / 1.25;
+    color: $anchor_text_color / 1.25;
+  }
+}
+
+// Typography
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  line-height: 2em;
+}
+
+h1 { color: $foreground_color * 3; font-size: 2.5em }
+h2 { color: $foreground_color * 2; font-size: 2em }
+h3 { color: $foreground_color; font-size: 1.75em }
+
+table {
+  border: {
+    collapse: 0;
+    spacing: 0;
+  }
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+th, td {
+  font-size: 0.9em;
+  padding: 0.5em 0;
+}
+
+th {
+  border-bottom: 0.2em solid $border_color;
+  font-weight: bold;
+  text-align: left;
+}
+
+td {
+  border-bottom: 0.1em solid $border_color;
+}
+
+// Forms
+
+form {
+  display: block;
+}
+
+input {
+  border-radius: 3px;
+  font-family: $font_family;
+  margin-bottom: 1em;
+}
+
+button,
+input[type=submit] {
+  background-color: $foreground_color;
+  color: $background_color;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $foreground_color * 2;
+  }
+}
+
+input[type=text] {
+  border: {
+    color: $border_color;
+    style: solid;
+    width: 0.1em;
+  }
+  padding: 0.25em 0.5em;
+}
+
+label {
+  color: $foreground_color * 3;
+  display: block;
+  font: {
+    size: 0.8em;
+    weight: bold;
+  }
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+// Global Elements
+
+#notice {
+  background-color: $foreground_color * 3;
+  color: $background_color;
+  font-size: 0.8em;
+  line-height: 3em;
+  margin: 0 -1.5em 3em;
+  padding: 0 1.5em;
+  text-transform: uppercase;
+}
+
+#da-footer {
+  margin-top: 2em;
+}
