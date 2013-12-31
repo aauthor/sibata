@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131230182701) do
     t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "line_items", ["tab_id"], name: "index_line_items_on_tab_id", using: :btree
@@ -30,6 +31,22 @@ ActiveRecord::Schema.define(version: 20131230182701) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "first_name"
+    t.integer  "user_id"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "username",            default: "", null: false
+    t.string   "encrypted_password",  default: "", null: false
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",       default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

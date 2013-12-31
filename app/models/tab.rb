@@ -2,6 +2,7 @@ class Tab < ActiveRecord::Base
 
   validates_uniqueness_of :first_name, scope: :last_name, message: 'this tab name is already taken'
   has_many :line_items, dependent: :destroy
+  belongs_to :user
 
   def add!(amount)
     line_items << LineItem.new( amount: amount )
