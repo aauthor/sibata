@@ -24,6 +24,18 @@ body {
   padding: 50px 25%;
 }
 
+// Anchors
+
+a {
+  border-bottom: 0.1em solid #9C6;
+  color: #693;
+
+  &:hover {
+    border-bottom-color: #360;
+    color: #360;
+  }
+}
+
 // Typography
 
 h1, h2, h3, h4, h5, h6 {
