@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @tab.name %>
+  <strong>First Name:</strong>
+  <%= @tab.first_name%>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%= @tab.last_name%>
+</p>
+<p>
+  <strong>Note:</strong>
+  <%= @tab.note%>
 </p>
 
 <%= link_to 'New Line Item', new_tab_line_item_path(@tab) %> |
