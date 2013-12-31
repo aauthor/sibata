@@ -29,7 +29,9 @@ class Tab < ActiveRecord::Base
   end
 
   def to_s
-    "#{last_name}, #{first_name}"
+    str = "#{last_name}, #{first_name}"
+    str += " (#{note})" if note.present?
+    str
   end
 
   def name
