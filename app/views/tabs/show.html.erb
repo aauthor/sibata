@@ -10,13 +10,24 @@
 <%= link_to 'Back', tabs_path %> |
 <%= link_to 'Close', close_tab_path(@tab), data: { confirm: 'Are you sure that you want to close this tab?' }%>
 
+<h2>Line Items</h2>
 <table>
-  <% @tab.line_items.each do |line_item| %>
-    <tr>
-      <td><%= number_to_currency line_item.amount %></td>
-      <td>(added by <%= line_item.user.try(:username) %>)</td>
-      <td><%= link_to 'Edit', edit_line_item_path(line_item) %>
-      <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+  <thead>
+    <th>Amount</th>
+    <th>Added By</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @tab.line_items.each do |line_item| %>
+      <tr>
+        <td><%= number_to_currency line_item.amount %></td>
+        <td><%= line_item.user.try(:username) %></td>
+        <td><%= line_item.note %></td>
+        <td><%= link_to 'Edit', edit_line_item_path(line_item) %>
+        <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
