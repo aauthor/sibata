@@ -1,7 +1,11 @@
-// Mixins
-@mixin helvetica-neue {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+// Colors
+$anchor_text_color: #693;
+$background_color: #FFF;
+$border_color: #CCC;
+$foreground_color: #333;
+
+// Typography
+$font_family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // A simple style reset
 * {
@@ -18,21 +22,21 @@
 }
 
 body {
-  @include helvetica-neue;
-  background-color: #FFF;
-  color: #000;
+  background-color: $background_color;
+  color: $foreground_color;
+  font-family: $font_family;
   padding: 50px 25%;
 }
 
 // Anchors
 
 a {
-  border-bottom: 0.1em solid #9C6;
-  color: #693;
+  border-bottom: 0.1em solid $anchor_text_color * 1.25;
+  color: $anchor_text_color;
 
   &:hover {
-    border-bottom-color: #360;
-    color: #360;
+    border-bottom-color: $anchor_text_color / 1.25;
+    color: $anchor_text_color / 1.25;
   }
 }
 
@@ -46,9 +50,9 @@ h1, h2, h3 {
   line-height: 2em;
 }
 
-h1 { color: #999; font-size: 2.5em }
-h2 { color: #666; font-size: 2em }
-h3 { color: #333; font-size: 1.75em }
+h1 { color: $foreground_color * 3; font-size: 2.5em }
+h2 { color: $foreground_color * 2; font-size: 2em }
+h3 { color: $foreground_color; font-size: 1.75em }
 
 table {
   border: {
@@ -65,13 +69,13 @@ th, td {
 }
 
 th {
-  border-bottom: 0.1em solid #CCC;
+  border-bottom: 0.2em solid $border_color;
   font-weight: bold;
   text-align: left;
 }
 
 td {
-  border-bottom: 0.1em solid #EEE;
+  border-bottom: 0.1em solid $border_color;
 }
 
 // Forms
@@ -81,28 +85,28 @@ form {
 }
 
 input {
-  @include helvetica-neue;
   border-radius: 3px;
+  font-family: $font_family;
   margin-bottom: 1em;
 }
 
 button,
 input[type=submit] {
-  background-color: #000;
-  color: #FFF;
+  background-color: $foreground_color;
+  color: $background_color;
   cursor: pointer;
   font-size: 0.8em;
   padding: 0.5em 1em;
   text-transform: uppercase;
 
   &:hover {
-    background-color: #666;
+    background-color: $foreground_color * 2;
   }
 }
 
 input[type=text] {
   border: {
-    color: #999;
+    color: $border_color;
     style: solid;
     width: 0.1em;
   }
@@ -110,7 +114,7 @@ input[type=text] {
 }
 
 label {
-  color: #999;
+  color: $foreground_color * 3;
   display: block;
   font: {
     size: 0.8em;
@@ -123,8 +127,8 @@ label {
 // Global Elements
 
 #notice {
-  background-color: #999;
-  color: #FFF;
+  background-color: $foreground_color * 3;
+  color: $background_color;
   font-size: 0.8em;
   line-height: 3em;
   margin: 0 -1.5em 3em;
