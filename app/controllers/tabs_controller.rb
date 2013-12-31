@@ -55,7 +55,7 @@ class TabsController < ApplicationController
   # GET /tabs/1/close
   # GET /tabs/1/close.json
   def close
-    @tab.close!
+    LineItem.create!( tab: @tab, user: current_user, amount: -@tab.balance )
     respond_to do |format|
       format.html { redirect_to tab_url(@tab) }
       format.json { head :no_content }
