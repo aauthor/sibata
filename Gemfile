@@ -30,8 +30,9 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'rvm-capistrano'
 
+gem 'pry'
+
 group :development do
-  gem 'pry'
   gem 'pry-rescue'
 end
 
