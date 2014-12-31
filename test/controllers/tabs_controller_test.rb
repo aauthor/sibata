@@ -2,7 +2,9 @@ require 'test_helper'
 
 class TabsControllerTest < ActionController::TestCase
   setup do
+    @user = users(:one)
     @tab = tabs(:one)
+    sign_in :user, @user
   end
 
   test "should get index" do
@@ -18,10 +20,10 @@ class TabsControllerTest < ActionController::TestCase
 
   test "should create tab" do
     assert_difference('Tab.count') do
-      post :create, tab: { name: @tab.name }
+      post :create, tab: { first_name: "Bob", last_name: "Joe" }
     end
 
-    assert_redirected_to tab_path(assigns(:tab))
+    assert_redirected_to new_tab_line_item_path(assigns(:tab))
   end
 
   test "should show tab" do

@@ -1,10 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  first_name: One
+  last_name: Last
 
 two:
-  name: MyString
+  first_name: Two
+  last_name: Last
 
 with_line_items:
-  name: With Line Items
+  first_name: With
+  last_name: LineItems

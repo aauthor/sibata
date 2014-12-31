@@ -1,6 +1,6 @@
 class Tab < ActiveRecord::Base
 
-  validates_uniqueness_of :last_name, scope: [:last_name, :note],
+  validates_uniqueness_of :last_name, scope: [:first_name, :note],
     message: ' - this tab name is already taken; change the first name or add a note'
   has_many :line_items, dependent: :destroy
   belongs_to :user
