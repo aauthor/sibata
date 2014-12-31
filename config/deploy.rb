@@ -2,7 +2,7 @@
 lock '3.3.5'
 
 set :application, 'sibata'
-set :repo_url, 'git@example.com:aauthor/sibata.git'
+set :repo_url, 'git@github.com:aauthor/sibata.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
