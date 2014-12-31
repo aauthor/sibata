@@ -27,11 +27,13 @@ gem 'devise'
 gem 'jbuilder', '~> 1.2'
 
 gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'capistrano', '~> 3.3.5'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm', github: "capistrano/rvm"
 end
 
 group :test do
