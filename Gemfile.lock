@@ -209,6 +209,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   passenger
+  pry
   pry-byebug
   rails (= 4.2.0)
   sass-rails (~> 4.0.0)
