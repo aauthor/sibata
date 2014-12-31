@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131231220815) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "line_items", force: true do |t|
     t.integer  "tab_id"
     t.decimal  "amount"
@@ -25,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131231220815) do
     t.string   "note"
   end
 
-  add_index "line_items", ["tab_id"], name: "index_line_items_on_tab_id", using: :btree
+  add_index "line_items", ["tab_id"], name: "index_line_items_on_tab_id"
 
   create_table "tabs", force: true do |t|
     t.string   "last_name"
@@ -49,6 +46,6 @@ ActiveRecord::Schema.define(version: 20131231220815) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
